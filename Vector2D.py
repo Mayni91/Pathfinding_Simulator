@@ -1,11 +1,12 @@
 import math as math
+import random as random
 
 class Vector2D:
 
     dx = 0
     dy = 0
 
-    def __init__(self, dx, dy):
+    def __init__(self, dx=0, dy=0):
         self.dx = dx
         self.dy = dy
 
@@ -31,10 +32,14 @@ class Vector2D:
         self.dy *= factor
 
     def add(self, vector):
-        return Vector2D(self.dx + vector.dx, self.dy + vector.dy)
+        self.dx += vector.dx
+        self.dy += vector.dy
+        #return Vector2D(self.dx + vector.dx, self.dy + vector.dy)
 
     def sub(self, vector):
-        return Vector2D(self.dx - vector.dx, self.dy - vector.dy)
+        self.dx -= vector.dx
+        self.dy -= vector.dy
+        #return Vector2D(self.dx - vector.dx, self.dy - vector.dy)
 
     def div(self, factor):
         self.dx /= factor
@@ -46,3 +51,5 @@ class Vector2D:
     def anglebetween(self, vector):
         return math.atan2(vector.dx - self.dx, self.dy - vector.dy)
 
+    def random2D(self):
+        return Vector2D(random.uniform(-1, 1), random.uniform(-1,1))
