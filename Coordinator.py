@@ -1,6 +1,6 @@
 from Field import Field
 from MeshGrid import MeshGrid
-from Vector import Vector
+from Vector2D import Vector2D
 from Ball import Ball
 from tkinter import *
 
@@ -21,7 +21,7 @@ class Coordinator:
         self.canvas = Canvas(self.top, bg="darkgreen", height=700, width=1000)
         self.field = Field(self.canvas, "darkgreen", 1000, 700, 50, 30, 160, 80,150, 70, 200, 10, 150, 5)
         self.meshGrid = MeshGrid(self.canvas, 1000, 700, 50, 15)
-        self.ball = Ball(self.canvas, 500, 350, 10, 0, (Vector(0, 0)), "white", "black", 1)
+        self.ball = Ball(self.canvas, 500, 350, 10, 0, (Vector2D(0, 0)), "white", "black", 1)
 
         buttonNextFrame = Button(self.top, text="Next Frame", command=self.nextFrame)
         buttonNextFrame.place(x=350, y=680)

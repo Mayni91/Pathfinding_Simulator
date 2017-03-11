@@ -1,4 +1,4 @@
-from Vector import Vector
+from Vector2D import Vector2D
 from tkinter import *
 
 class Ball:
@@ -9,7 +9,7 @@ class Ball:
     speed = 0
 
 
-    vector:Vector = None
+    vector:Vector2D = None
 
     diameter = 1
     color_fill = "white"
